@@ -28,4 +28,48 @@ export const notes: Note[] = [
       'Works well with Next.js',
     ],
   },
+  {
+    id: 3,
+    title: 'Tailwind CSS Basics',
+    body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
+    bullets: [
+      'Utility classes for styling',
+      'Responsive design with breakpoints',
+      'Customizable via configuration',
+      'Works well with Next.js',
+    ],
+  },
+  {
+    id: 4,
+    title: 'Tailwind CSS Basics',
+    body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
+    bullets: [
+      'Utility classes for styling',
+      'Responsive design with breakpoints',
+      'Customizable via configuration',
+      'Works well with Next.js',
+    ],
+  },
+  {
+    id: 5,
+    title: 'Tailwind CSS Basics',
+    body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
+    bullets: [
+      'Utility classes for styling',
+      'Responsive design with breakpoints',
+      'Customizable via configuration',
+      'Works well with Next.js',
+    ],
+  },
+  {
+    id: 6,
+    title: 'Tailwind CSS Basics',
+    body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
+    bullets: [
+      'Utility classes for styling',
+      'Responsive design with breakpoints',
+      'Customizable via configuration',
+      'Works well with Next.js',
+    ],
+  },
 ];
