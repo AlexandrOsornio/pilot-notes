@@ -3,12 +3,22 @@ import { Note } from "@/content/Notes";
 
 interface SidenavProps {
   notes: Note[];
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
 }
 
-export default function Sidenav({ notes }: SidenavProps) {
+export default function Sidenav({ notes, searchTerm, setSearchTerm }: SidenavProps) {
   return (
     <aside className="fixed top-0 left-0 w-64 h-screen bg-black shadow-md p-4 overflow-hidden hover:overflow-y-auto">
       <h2 className="text-xl font-bold mb-4 text-white">Topic notes</h2>
+      {/* Search bar */}
+      <input
+        type="text"
+        placeholder="Search notes..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full p-2 mb-4 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:border-blue-500"
+      />
       <ul>
         {notes.map((note) => (
           <li key={note.id} className="mb-2">

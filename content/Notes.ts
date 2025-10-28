@@ -8,13 +8,10 @@ export interface Note {
 export const notes: Note[] = [
   {
     id: 1,
-    title: 'Introduction to Next.js',
-    body: 'Next.js is a React framework for building server-rendered and static web applications.',
+    title: 'Communications',
+    body: 'Most communications take the form of the 4 Ws: Who you\'re talking to, who you are, where you are, what you want.',
     bullets: [
-      'Supports Server-Side Rendering (SSR)',
-      'Static Site Generation (SSG)',
-      'File-based routing with App Router',
-      'Built-in API routes',
+      'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport',
     ],
   },
   {
