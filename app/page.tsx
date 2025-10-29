@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Burger menu button. Visible only on mobile. Hidden on md+ */}
-      <button className='md:hidden fixed top-4 left-4 z-50 p-2 bg-black text-white rounded-md'
+      <button className='md:hidden fixed top-4 right-4 z-50 p-2 bg-black text-white rounded-md'
       onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? 'Close Menu' : 'Open Menu'}
@@ -39,7 +39,7 @@ export default function Home() {
       {/* Sidebar with note topics */}
       <Sidenav notes={sortedNotes} searchTerm={searchTerm} setSearchTerm={setSearchTerm} isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
       {/* Main content area */}
-      <main className="flex-1 p-6 bg-blue-100 overflow-y-auto md:ml-64">
+      <main className="flex-1 pt-16 p-6 bg-blue-100 overflow-y-auto md:ml-64 md:pt-6">
         <ul className=''>
           {sortedNotes.map((note) => (
             <li key={note.id} id={`note-${note.id}`} className="mb-6 scroll-mt-6">
