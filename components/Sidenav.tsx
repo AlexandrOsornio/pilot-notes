@@ -27,7 +27,7 @@ export default function Sidenav({ notes, searchTerm, setSearchTerm, isOpen, setI
           <li key={note.id} className="mb-2">
             <Link
               href={`#note-${note.id}`}
-              className="text-blue-600 hover:underline"
+              className="text-white hover:underline"
               scroll={true}>
               {note.title}
             </Link>

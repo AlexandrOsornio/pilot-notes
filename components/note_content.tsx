@@ -5,7 +5,7 @@ interface NoteContentProps {
 }
 
 function BulletList({ bullets, level = 0 }: { bullets: Bullet[]; level?: number }) {
-  const listStyle = ['list-disc', 'list-circle', 'list-square'];
+  const listStyle = ['list-disc', 'list-[circle]', 'list-[square]'];
   const style = listStyle[level % listStyle.length];
 
   return (

@@ -39,7 +39,17 @@ export const notes: Note[] = [
       {
         text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport',
         subBullets: [
-          { text: 'Sub-bullet example 1' },
+          { text: 'Sub-bullet example 1',
+            subBullets: [
+              { text: 'Sub-bullet example 1' },
+              { text: 'Sub-bullet example 2',
+                subBullets: [
+                  { text: 'Sub-bullet example 1' },
+                  { text: 'Sub-bullet example 2' },
+                ]
+               },
+            ],
+           },
           { text: 'Sub-bullet example 2' },
         ],
       },
