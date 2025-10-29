@@ -14,7 +14,7 @@ export const notes: Note[] = [
   {
     id: 1,
     title: 'Communications',
-    body: 'Most communications take the form of the 4 Ws: Who you\'re talking to, who you are, where you are, what you want.',
+    body: 'Most communications take the form of the 4 Ws:\n Who you\'re talking to, who you are, where you are, what you want.',
     bullets: [
       {
         text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport'
