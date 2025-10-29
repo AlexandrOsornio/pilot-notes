@@ -1,8 +1,13 @@
+export interface Bullet{
+  text: string;
+  subBullets?: Bullet[];
+}
+
 export interface Note {
   id: number;
   title: string;
   body: string;
-  bullets: string[];
+  bullets: Bullet[];
 }
 
 export const notes: Note[] = [
@@ -11,7 +16,9 @@ export const notes: Note[] = [
     title: 'Communications',
     body: 'Most communications take the form of the 4 Ws: Who you\'re talking to, who you are, where you are, what you want.',
     bullets: [
-      'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport',
+      {
+        text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport'
+      },
     ],
   },
   {
@@ -19,10 +26,9 @@ export const notes: Note[] = [
     title: 'Tailwind CSS Basics',
     body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
     bullets: [
-      'Utility classes for styling',
-      'Responsive design with breakpoints',
-      'Customizable via configuration',
-      'Works well with Next.js',
+      {
+        text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport'
+      },
     ],
   },
   {
@@ -30,10 +36,13 @@ export const notes: Note[] = [
     title: 'Tailwind CSS Basics',
     body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
     bullets: [
-      'Utility classes for styling',
-      'Responsive design with breakpoints',
-      'Customizable via configuration',
-      'Works well with Next.js',
+      {
+        text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport',
+        subBullets: [
+          { text: 'Sub-bullet example 1' },
+          { text: 'Sub-bullet example 2' },
+        ],
+      },
     ],
   },
   {
@@ -41,10 +50,9 @@ export const notes: Note[] = [
     title: 'Tailwind CSS Basics',
     body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
     bullets: [
-      'Utility classes for styling',
-      'Responsive design with breakpoints',
-      'Customizable via configuration',
-      'Works well with Next.js',
+      {
+        text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport'
+      },
     ],
   },
   {
@@ -52,10 +60,9 @@ export const notes: Note[] = [
     title: 'Tailwind CSS Basics',
     body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
     bullets: [
-      'Utility classes for styling',
-      'Responsive design with breakpoints',
-      'Customizable via configuration',
-      'Works well with Next.js',
+      {
+        text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport'
+      },
     ],
   },
   {
@@ -63,10 +70,9 @@ export const notes: Note[] = [
     title: 'Tailwind CSS Basics',
     body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
     bullets: [
-      'Utility classes for styling',
-      'Responsive design with breakpoints',
-      'Customizable via configuration',
-      'Works well with Next.js',
+      {
+        text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport'
+      },
     ],
   },
 ];

@@ -14,7 +14,7 @@ export default function Home() {
   const filteredNotes = allNotes.filter((note) => {
     const titlematch = note.title.toLowerCase().includes(lowerSearchTerm);
     const bodymatch = note.body.toLowerCase().includes(lowerSearchTerm);
-    const bulletsmatch = note.bullets.some((bullet) => bullet.toLowerCase().includes(lowerSearchTerm));
+    const bulletsmatch = note.bullets.some((bullet) => bullet.text.toLowerCase().includes(lowerSearchTerm));
     return titlematch || bodymatch || bulletsmatch;
   })
 
