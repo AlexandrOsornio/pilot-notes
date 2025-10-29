@@ -5,11 +5,14 @@ interface SidenavProps {
   notes: Note[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
 }
 
-export default function Sidenav({ notes, searchTerm, setSearchTerm }: SidenavProps) {
+export default function Sidenav({ notes, searchTerm, setSearchTerm, isOpen, setIsOpen }: SidenavProps) {
   return (
-    <aside className="fixed top-0 left-0 w-64 h-screen bg-black shadow-md p-4 overflow-hidden hover:overflow-y-auto">
+    <aside className={`fixed top-0 left-0 w-full md:w-64 h-screen md:h-screen bg-black shadow-md p-4 overflow-hidden hover:overflow-y-auto
+    transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'} md:translate-y-0 md:fixed md:left-0`}>
       <h2 className="text-xl font-bold mb-4 text-white">Topic notes</h2>
       {/* Search bar */}
       <input

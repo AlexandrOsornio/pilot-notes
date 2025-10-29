@@ -6,6 +6,7 @@ import { notes as allNotes } from '@/content/Notes';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Normalize search term to lowercase
   const lowerSearchTerm = searchTerm.toLowerCase();
@@ -27,11 +28,18 @@ export default function Home() {
   });
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen flex-col">
+      {/* Burger menu button. Visible only on mobile. Hidden on md+ */}
+      <button className='md:hidden fixed top-4 left-4 z-50 p-2 bg-black text-white rounded-md'
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? 'Close Menu' : 'Open Menu'}
+      </button>
+
       {/* Sidebar with note topics */}
-      <Sidenav notes={sortedNotes} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Sidenav notes={sortedNotes} searchTerm={searchTerm} setSearchTerm={setSearchTerm} isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
       {/* Main content area */}
-      <main className="flex-1 p-6 bg-blue-100 overflow-y-auto ml-64">
+      <main className="flex-1 p-6 bg-blue-100 overflow-y-auto md:ml-64">
         <ul className=''>
           {sortedNotes.map((note) => (
             <li key={note.id} id={`note-${note.id}`} className="mb-6 scroll-mt-6">
