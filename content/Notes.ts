@@ -1,5 +1,13 @@
+export interface NoteImage {
+  url: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
 export interface Bullet{
   text: string;
+  images?: NoteImage[];
   subBullets?: Bullet[];
 }
 
@@ -7,6 +15,7 @@ export interface Note {
   id: number;
   title: string;
   body: string;
+  images?: NoteImage[];
   bullets: Bullet[];
 }
 
@@ -112,11 +121,35 @@ export const notes: Note[] = [
   },
   {
     id: 4,
-    title: 'Tailwind CSS Basics',
-    body: 'Tailwind CSS is a utility-first CSS framework for rapid UI development.',
+    title: 'Santa Paula non-standard traffic pattern',
+    body: 'KSZP Does not have regular traffic pattern, use the information in the following images to plan your approach to KSZP.',
+    images: [
+      {
+        url: 'https://santapaulaairport.com/images/SZPoverview_small.jpg',
+        alt: 'Santa Paula view from above',}
+    ],
     bullets: [
       {
-        text: 'In the case of Class B, C, and D airspace, a 5th W is added: "What you have" which refers to the AITIS obtained before contacting the airport'
+        text: 'Left traffic for runway 22',
+        images:[
+          {
+            url: 'https://santapaulaairport.com/images/pagebuilderck/west.jpg',
+            alt: 'Santa Paula left traffic for runway 22',
+            width: 1920,
+            height: 1080,
+          }
+        ]
+      },
+      {
+        text: 'Right traffic for runway 04',
+        images:[
+          {
+            url: 'https://santapaulaairport.com/images/pagebuilderck/east.jpg',
+            alt: 'Santa Paula right traffic for runway 04',
+            width: 1920,
+            height: 1080,
+          }
+        ]
       },
     ],
   },

@@ -1,7 +1,24 @@
-import { Note, Bullet } from '@/content/Notes';
+import Image from 'next/image';
+import { Note, Bullet, NoteImage } from '@/content/Notes';
 
 interface NoteContentProps {
   note: Note;
+}
+
+function RenderImages({images}: {images: NoteImage[] }){
+  return (
+    <div className='mt-2 space-y 2'>
+      {images.map((img, index) => (
+        <figure key={index} className='block'>
+          <Image 
+          src={img.url}
+          alt={img.alt} 
+          {...((img.width && img.height) ? {width: img.width, height: img.height} : {width: 600, height: 400})}
+          className='rounded-md'/>
+        </figure>
+      ))}
+    </div>
+  )
 }
 
 function BulletList({ bullets, level = 0 }: { bullets: Bullet[]; level?: number }) {
@@ -13,6 +30,7 @@ function BulletList({ bullets, level = 0 }: { bullets: Bullet[]; level?: number 
         {bullets.map((bullet, index) => (
         <li key={index} className='whitespace-pre-line'>
           {bullet.text}
+          {bullet.images && <RenderImages images={bullet.images} />}
           {bullet.subBullets && (<BulletList bullets={bullet.subBullets} level={level + 1}/>)}
           </li>
         ))}
@@ -27,6 +45,7 @@ export default function NoteContent({ note }: NoteContentProps) {
         <div className='text-black'>
             <h1 className="text-2xl font-bold mb-4">{note.title}</h1>
             <p className="mb-4 whitespace-pre-line">{note.body}</p>
+            {note.images && <RenderImages images={note.images} />}
             <BulletList bullets={note.bullets} />
       </div>
     </div>
