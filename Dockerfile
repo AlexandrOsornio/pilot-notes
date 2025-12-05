@@ -45,7 +45,7 @@ USER nextjs
 EXPOSE 3000
 
 # Env var for production
-ENV NODE_ENV=production
+#ENV NODE_ENV=production
 
 # Start the app
 CMD ["pnpm", "start"]
