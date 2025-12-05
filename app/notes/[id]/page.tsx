@@ -19,7 +19,7 @@ export default async function NotePage({ params }: NotePageProps) {
 
   return (
     <div className="flex min-h-screen">
-      <Sidenav notes={notes} />
+      {/* <Sidenav notes={notes} /> */}
       <main className="flex-1 p-6 bg-gray-100">
         <NoteContent note={note} />
       </main>
